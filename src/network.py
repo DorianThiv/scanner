@@ -4,7 +4,7 @@ from reporter import Reporter
 
 report = Reporter()
 
-def scan_ip(hostname: str):
+def scan(hostname: str):
     print('Scanning...')
     nmap = nmap3.Nmap()
     result = nmap.nmap_os_detection(hostname)
@@ -15,4 +15,4 @@ def ping(hostname: str):
     response = os.system(f'ping -n 1 {hostname} > nul"')
     if response == 0:
         print(f'Hostname: {hostname} up!')
-        scan_ip(hostname)
+        scan(hostname)
